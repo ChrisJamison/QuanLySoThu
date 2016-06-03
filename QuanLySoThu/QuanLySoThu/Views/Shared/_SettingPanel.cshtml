@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "_SettingPanel";
+}
+
+<ul>
+    <li><a href="#">Dashboard</a></li>
+    <li>
+        @Html.ActionLink("Động Vật", "Index", "DongVat")
+        <a href="#" class="expand-btn"><span class="fa fa-chevron-right"></span></a>
+        <ul>
+            <li>@Html.ActionLink("Danh Sách", "Index", "DongVat")</li>
+            <li>@Html.ActionLink("Thêm Động Vật", "Create", "DongVat")</li>
+        </ul>
+    </li>
+    <li>
+        @Html.ActionLink("Thức Ăn", "Index", "ThucAn")
+        <a href="#" class="expand-btn"><span class="fa fa-chevron-right"></span></a>
+        <ul>
+            <li>@Html.ActionLink("Danh Sách", "Index", "ThucAn")</li>
+            <li>@Html.ActionLink("Thêm Thức Ăn", "Create", "ThucAn")</li>
+        </ul>
+    </li>
+    <li>
+        @Html.ActionLink("Thuốc Điều Trị", "Index", "ThuocDieuTri")
+        <a href="#" class="expand-btn"><span class="fa fa-chevron-right"></span></a>
+       <ul>
+            <li>@Html.ActionLink("Danh Sách", "Index", "ThuocDieuTri")</li>
+            <li>@Html.ActionLink("Thêm Thuốc Điều Trị", "Create", "ThuocDieuTri")</li>
+        </ul>
+    </li>
+    <li>@Html.ActionLink("Nhân Viên", "Index", "NhanVien")
+        <a href="#" class="expand-btn"><span class="fa fa-chevron-right"></span></a>
+        <ul>
+            <li>@Html.ActionLink("Danh Sách", "Index", "NhanVien")</li>
+            <li>@Html.ActionLink("Thêm Nhân Viên", "Create", "NhanVien")</li>
+        </ul>
+    </li>
+    <li>@Html.ActionLink("Tài nguyên", "Index", "Resource")
+        <a href="#" class="expand-btn"><span class="fa fa-chevron-right"></span></a>
+        <ul>
+            @* <li>@Html.ActionLink("Hình nhạc", "Index", "Resource", new { type = "musics"}, null)</li>
+            <li>@Html.ActionLink("Hình video", "Index", "Resource", new { type = "videos"}, null)</li>
+            <li>@Html.ActionLink("Hình nghệ sĩ", "Index", "Resource", new { type = "artists"}, null)</li>
+            <li>@Html.ActionLink("File nhạc", "IndexFile", "Resource", new { type = "musics"}, null)</li>
+            <li>@Html.ActionLink("File video", "IndexFile", "Resource", new { type = "videos"}, null)</li*@>
+        </ul>
+    </li>
+    <li><a href="#">Thiết lập</a>
+        <a href="#" class="expand-btn"><span class="fa fa-chevron-right"></span></a>
+        <ul>
+            <li><a>Slider</a></li>
+            <li><a>Khác</a></li>
+        </ul>
+    </li>
+    <li>@Html.ActionLink("Tài khoản", "Manage", "Account")</li>
+</ul>
+
+<script type="text/javascript">
+    $('.expand-btn').click(function () {
+        $('ul', this.parentElement).slideToggle(200);
+        var btn = $('span', this);
+
+        if ($(this).hasClass('is-show')) {
+            $(this).removeClass('is-show')
+            btn.css({
+                'transform': 'rotate(0deg)'
+            });
+        }
+        else {
+            $(this).addClass('is-show')
+            btn.css({
+                'transform': 'rotate(90deg)'
+            });
+        }
+    });
+</script>

@@ -1,0 +1,51 @@
+﻿@model DataModel.BANGPHANCONGVESINH
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>BANGPHANCONGVESINH</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MaVeSinh)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MaVeSinh)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NHANVIEN.LoaiNhanVien)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NHANVIEN.LoaiNhanVien)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CHUONG.LoaiChuong)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CHUONG.LoaiChuong)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TenVeSinh)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TenVeSinh)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NgayLam)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NgayLam)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

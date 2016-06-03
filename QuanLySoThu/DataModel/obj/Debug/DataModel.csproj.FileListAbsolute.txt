@@ -1,0 +1,8 @@
+D:\RESTful Learning\QuanLySoThu\DataModel\bin\Debug\DataModel.dll.config
+D:\RESTful Learning\QuanLySoThu\DataModel\bin\Debug\DataModel.dll
+D:\RESTful Learning\QuanLySoThu\DataModel\bin\Debug\DataModel.pdb
+D:\RESTful Learning\QuanLySoThu\DataModel\bin\Debug\EntityFramework.dll
+D:\RESTful Learning\QuanLySoThu\DataModel\bin\Debug\EntityFramework.xml
+D:\RESTful Learning\QuanLySoThu\DataModel\obj\Debug\DataModel.csprojResolveAssemblyReference.cache
+D:\RESTful Learning\QuanLySoThu\DataModel\obj\Debug\DataModel.dll
+D:\RESTful Learning\QuanLySoThu\DataModel\obj\Debug\DataModel.pdb

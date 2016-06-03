@@ -1,0 +1,69 @@
+﻿@model DataModel.BANGPHANCONGVESINH
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>BANGPHANCONGVESINH</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MaVeSinh)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MaVeSinh)
+            @Html.ValidationMessageFor(model => model.MaVeSinh)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MaNhanVien, "NHANVIEN")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("MaNhanVien", String.Empty)
+            @Html.ValidationMessageFor(model => model.MaNhanVien)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MaChuong, "CHUONG")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("MaChuong", String.Empty)
+            @Html.ValidationMessageFor(model => model.MaChuong)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TenVeSinh)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TenVeSinh)
+            @Html.ValidationMessageFor(model => model.TenVeSinh)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NgayLam)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NgayLam)
+            @Html.ValidationMessageFor(model => model.NgayLam)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

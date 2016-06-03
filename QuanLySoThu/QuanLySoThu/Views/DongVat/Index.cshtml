@@ -1,0 +1,154 @@
+﻿@model IEnumerable<DataModel.DONGVAT>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+         <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaDongVat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenDongVat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenKhoaHoc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GioiTinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mau)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CanNang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChieuCao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChieuDai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgaySinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayNhapVe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Loai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Chi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ho)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nganh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SucKhoe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HinhThucGiamSat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoiXuatXu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoiCuTru)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TuoiTho)
+        </th>      
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+         <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.MaDongVat }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaDongVat }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaDongVat })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaDongVat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenDongVat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenKhoaHoc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GioiTinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mau)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CanNang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChieuCao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChieuDai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgaySinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayNhapVe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Loai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Chi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ho)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nganh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SucKhoe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HinhThucGiamSat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoiXuatXu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoiCuTru)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TuoiTho)
+        </td>
+    </tr>
+}
+
+</table>

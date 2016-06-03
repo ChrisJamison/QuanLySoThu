@@ -1,0 +1,72 @@
+﻿@model DataModel.THUOCDIEUTRI
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>THUOCDIEUTRI</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MaThuocDieuTri)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MaThuocDieuTri)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TenThuoc)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TenThuoc)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SoLo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SoLo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NgaySanXuat)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NgaySanXuat)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NgayHetHan)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NgayHetHan)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SoLuong)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SoLuong)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DonViTinh)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DonViTinh)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DonGia)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DonGia)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

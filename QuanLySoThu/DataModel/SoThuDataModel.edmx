@@ -1,0 +1,902 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="QuanLySoThuModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="QuanLySoThuModelStoreContainer">
+          <EntitySet Name="ACCOUNT" EntityType="QuanLySoThuModel.Store.ACCOUNT" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BANGDIEUTRI" EntityType="QuanLySoThuModel.Store.BANGDIEUTRI" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BANGPHANCONGVESINH" EntityType="QuanLySoThuModel.Store.BANGPHANCONGVESINH" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BANGTHUCDON" EntityType="QuanLySoThuModel.Store.BANGTHUCDON" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BENH" EntityType="QuanLySoThuModel.Store.BENH" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CHUONG" EntityType="QuanLySoThuModel.Store.CHUONG" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DONGVAT" EntityType="QuanLySoThuModel.Store.DONGVAT" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="KHAUPHANAN" EntityType="QuanLySoThuModel.Store.KHAUPHANAN" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="NHANVIEN" EntityType="QuanLySoThuModel.Store.NHANVIEN" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="QuanLySoThuModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="THUCAN" EntityType="QuanLySoThuModel.Store.THUCAN" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="THUOCDIEUTRI" EntityType="QuanLySoThuModel.Store.THUOCDIEUTRI" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_BANGDIEUTRI_BENH1" Association="QuanLySoThuModel.Store.FK_BANGDIEUTRI_BENH1">
+            <End Role="BENH" EntitySet="BENH" />
+            <End Role="BANGDIEUTRI" EntitySet="BANGDIEUTRI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BANGDIEUTRI_DONGVAT" Association="QuanLySoThuModel.Store.FK_BANGDIEUTRI_DONGVAT">
+            <End Role="DONGVAT" EntitySet="DONGVAT" />
+            <End Role="BANGDIEUTRI" EntitySet="BANGDIEUTRI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BANGDIEUTRI_NHANVIEN" Association="QuanLySoThuModel.Store.FK_BANGDIEUTRI_NHANVIEN">
+            <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+            <End Role="BANGDIEUTRI" EntitySet="BANGDIEUTRI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BANGPHANCONGVESINH_CHUONG" Association="QuanLySoThuModel.Store.FK_BANGPHANCONGVESINH_CHUONG">
+            <End Role="CHUONG" EntitySet="CHUONG" />
+            <End Role="BANGPHANCONGVESINH" EntitySet="BANGPHANCONGVESINH" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BANGPHANCONGVESINH_NHANVIEN" Association="QuanLySoThuModel.Store.FK_BANGPHANCONGVESINH_NHANVIEN">
+            <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+            <End Role="BANGPHANCONGVESINH" EntitySet="BANGPHANCONGVESINH" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BANGTHUCDON_KHAUPHANAN" Association="QuanLySoThuModel.Store.FK_BANGTHUCDON_KHAUPHANAN">
+            <End Role="KHAUPHANAN" EntitySet="KHAUPHANAN" />
+            <End Role="BANGTHUCDON" EntitySet="BANGTHUCDON" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BANGTHUCDON_NHANVIEN" Association="QuanLySoThuModel.Store.FK_BANGTHUCDON_NHANVIEN">
+            <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+            <End Role="BANGTHUCDON" EntitySet="BANGTHUCDON" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BENH_THUOCDIEUTRI1" Association="QuanLySoThuModel.Store.FK_BENH_THUOCDIEUTRI1">
+            <End Role="THUOCDIEUTRI" EntitySet="THUOCDIEUTRI" />
+            <End Role="BENH" EntitySet="BENH" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CHUONG_DONGVAT" Association="QuanLySoThuModel.Store.FK_CHUONG_DONGVAT">
+            <End Role="DONGVAT" EntitySet="DONGVAT" />
+            <End Role="CHUONG" EntitySet="CHUONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KHAUPHANAN_DONGVAT1" Association="QuanLySoThuModel.Store.FK_KHAUPHANAN_DONGVAT1">
+            <End Role="DONGVAT" EntitySet="DONGVAT" />
+            <End Role="KHAUPHANAN" EntitySet="KHAUPHANAN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KHAUPHANAN_THUCAN" Association="QuanLySoThuModel.Store.FK_KHAUPHANAN_THUCAN">
+            <End Role="THUCAN" EntitySet="THUCAN" />
+            <End Role="KHAUPHANAN" EntitySet="KHAUPHANAN" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ACCOUNT">
+          <Key>
+            <PropertyRef Name="TaiKhoan" />
+          </Key>
+          <Property Name="TaiKhoan" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="MatKhau" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Loai" Type="nvarchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="BANGDIEUTRI">
+          <Key>
+            <PropertyRef Name="MaDieuTri" />
+          </Key>
+          <Property Name="MaDieuTri" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="MaBenh" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="MaNhanVien" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="MaDongVat" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="NgayDieuTri" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BANGPHANCONGVESINH">
+          <Key>
+            <PropertyRef Name="MaVeSinh" />
+          </Key>
+          <Property Name="MaVeSinh" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="MaNhanVien" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="MaChuong" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="TenVeSinh" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="NgayLam" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BANGTHUCDON">
+          <Key>
+            <PropertyRef Name="MaThucDon" />
+          </Key>
+          <Property Name="MaThucDon" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="MaNhanVien" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="MaKhauPhanAn" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="NgayLap" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BENH">
+          <Key>
+            <PropertyRef Name="MaBenh" />
+          </Key>
+          <Property Name="MaBenh" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="MaThuocDieuTri" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="TenBenh" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="ThoiGianBenh" Type="datetime" Nullable="false" />
+          <Property Name="TrieuChung" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="TinhTrang" Type="nvarchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="CHUONG">
+          <Key>
+            <PropertyRef Name="MaChuong" />
+          </Key>
+          <Property Name="MaChuong" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="LoaiChuong" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="MaDongVat" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="TenChuong" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="SoLuongLuuTru" Type="int" />
+          <Property Name="TinhTrang" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="DONGVAT">
+          <Key>
+            <PropertyRef Name="MaDongVat" />
+          </Key>
+          <Property Name="MaDongVat" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="TenDongVat" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="TenKhoaHoc" Type="nvarchar" MaxLength="30" />
+          <Property Name="GioiTinh" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="Mau" Type="nvarchar" MaxLength="10" />
+          <Property Name="CanNang" Type="int" />
+          <Property Name="ChieuCao" Type="int" />
+          <Property Name="ChieuDai" Type="int" />
+          <Property Name="NgaySinh" Type="datetime" />
+          <Property Name="NgayNhapVe" Type="datetime" Nullable="false" />
+          <Property Name="Loai" Type="nvarchar" MaxLength="10" />
+          <Property Name="Chi" Type="nvarchar" MaxLength="10" />
+          <Property Name="Ho" Type="nvarchar" MaxLength="10" />
+          <Property Name="Bo" Type="nvarchar" MaxLength="10" />
+          <Property Name="Nganh" Type="nvarchar" MaxLength="10" />
+          <Property Name="SucKhoe" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="HinhThucGiamSat" Type="nvarchar" MaxLength="20" />
+          <Property Name="SoLuong" Type="int" />
+          <Property Name="NoiXuatXu" Type="nvarchar" MaxLength="30" />
+          <Property Name="NoiCuTru" Type="nvarchar" MaxLength="30" />
+          <Property Name="TuoiTho" Type="int" />
+        </EntityType>
+        <EntityType Name="KHAUPHANAN">
+          <Key>
+            <PropertyRef Name="MaKhauPhanAn" />
+          </Key>
+          <Property Name="MaKhauPhanAn" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="MaDongVat" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="MaThucAn" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="KhoiLuongKhauPhan" Type="int" Nullable="false" />
+          <Property Name="ThoiGianAn" Type="nvarchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="NHANVIEN">
+          <Key>
+            <PropertyRef Name="MaNhanVien" />
+          </Key>
+          <Property Name="MaNhanVien" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="LoaiNhanVien" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="TenNhanVien" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="PhongBan" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="GioiTinh" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="NgaySinh" Type="datetime" />
+          <Property Name="DiaChi" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CMND" Type="int" Nullable="false" />
+          <Property Name="SoDienThoai" Type="int" />
+          <Property Name="NgayVaoLam" Type="datetime" Nullable="false" />
+          <Property Name="TinhTrang" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="THUCAN">
+          <Key>
+            <PropertyRef Name="MaThucAn" />
+          </Key>
+          <Property Name="MaThucAn" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="LoaiThucAn" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="DonViTinh" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="TenThucAn" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="SoLuong" Type="int" Nullable="false" />
+          <Property Name="NgayNhap" Type="datetime" Nullable="false" />
+          <Property Name="HamLuongDinhDuong" Type="nvarchar" MaxLength="50" />
+          <Property Name="GiaThanh" Type="money" Nullable="false" />
+          <Property Name="ChiPhiVanChuyen" Type="money" Nullable="false" />
+          <Property Name="PhatSinh" Type="money" />
+        </EntityType>
+        <EntityType Name="THUOCDIEUTRI">
+          <Key>
+            <PropertyRef Name="MaThuocDieuTri" />
+          </Key>
+          <Property Name="MaThuocDieuTri" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="TenThuoc" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="SoLo" Type="int" Nullable="false" />
+          <Property Name="NgaySanXuat" Type="datetime" />
+          <Property Name="NgayHetHan" Type="datetime" />
+          <Property Name="SoLuong" Type="int" Nullable="false" />
+          <Property Name="DonViTinh" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="DonGia" Type="money" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_BANGDIEUTRI_BENH1">
+          <End Role="BENH" Type="QuanLySoThuModel.Store.BENH" Multiplicity="1" />
+          <End Role="BANGDIEUTRI" Type="QuanLySoThuModel.Store.BANGDIEUTRI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BENH">
+              <PropertyRef Name="MaBenh" />
+            </Principal>
+            <Dependent Role="BANGDIEUTRI">
+              <PropertyRef Name="MaBenh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BANGDIEUTRI_DONGVAT">
+          <End Role="DONGVAT" Type="QuanLySoThuModel.Store.DONGVAT" Multiplicity="1" />
+          <End Role="BANGDIEUTRI" Type="QuanLySoThuModel.Store.BANGDIEUTRI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DONGVAT">
+              <PropertyRef Name="MaDongVat" />
+            </Principal>
+            <Dependent Role="BANGDIEUTRI">
+              <PropertyRef Name="MaDongVat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BANGDIEUTRI_NHANVIEN">
+          <End Role="NHANVIEN" Type="QuanLySoThuModel.Store.NHANVIEN" Multiplicity="1" />
+          <End Role="BANGDIEUTRI" Type="QuanLySoThuModel.Store.BANGDIEUTRI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHANVIEN">
+              <PropertyRef Name="MaNhanVien" />
+            </Principal>
+            <Dependent Role="BANGDIEUTRI">
+              <PropertyRef Name="MaNhanVien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BANGPHANCONGVESINH_CHUONG">
+          <End Role="CHUONG" Type="QuanLySoThuModel.Store.CHUONG" Multiplicity="1" />
+          <End Role="BANGPHANCONGVESINH" Type="QuanLySoThuModel.Store.BANGPHANCONGVESINH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHUONG">
+              <PropertyRef Name="MaChuong" />
+            </Principal>
+            <Dependent Role="BANGPHANCONGVESINH">
+              <PropertyRef Name="MaChuong" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BANGPHANCONGVESINH_NHANVIEN">
+          <End Role="NHANVIEN" Type="QuanLySoThuModel.Store.NHANVIEN" Multiplicity="1" />
+          <End Role="BANGPHANCONGVESINH" Type="QuanLySoThuModel.Store.BANGPHANCONGVESINH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHANVIEN">
+              <PropertyRef Name="MaNhanVien" />
+            </Principal>
+            <Dependent Role="BANGPHANCONGVESINH">
+              <PropertyRef Name="MaNhanVien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BANGTHUCDON_KHAUPHANAN">
+          <End Role="KHAUPHANAN" Type="QuanLySoThuModel.Store.KHAUPHANAN" Multiplicity="1" />
+          <End Role="BANGTHUCDON" Type="QuanLySoThuModel.Store.BANGTHUCDON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHAUPHANAN">
+              <PropertyRef Name="MaKhauPhanAn" />
+            </Principal>
+            <Dependent Role="BANGTHUCDON">
+              <PropertyRef Name="MaNhanVien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BANGTHUCDON_NHANVIEN">
+          <End Role="NHANVIEN" Type="QuanLySoThuModel.Store.NHANVIEN" Multiplicity="1" />
+          <End Role="BANGTHUCDON" Type="QuanLySoThuModel.Store.BANGTHUCDON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHANVIEN">
+              <PropertyRef Name="MaNhanVien" />
+            </Principal>
+            <Dependent Role="BANGTHUCDON">
+              <PropertyRef Name="MaNhanVien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BENH_THUOCDIEUTRI1">
+          <End Role="THUOCDIEUTRI" Type="QuanLySoThuModel.Store.THUOCDIEUTRI" Multiplicity="1" />
+          <End Role="BENH" Type="QuanLySoThuModel.Store.BENH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="THUOCDIEUTRI">
+              <PropertyRef Name="MaThuocDieuTri" />
+            </Principal>
+            <Dependent Role="BENH">
+              <PropertyRef Name="MaThuocDieuTri" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CHUONG_DONGVAT">
+          <End Role="DONGVAT" Type="QuanLySoThuModel.Store.DONGVAT" Multiplicity="1" />
+          <End Role="CHUONG" Type="QuanLySoThuModel.Store.CHUONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DONGVAT">
+              <PropertyRef Name="MaDongVat" />
+            </Principal>
+            <Dependent Role="CHUONG">
+              <PropertyRef Name="MaDongVat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KHAUPHANAN_DONGVAT1">
+          <End Role="DONGVAT" Type="QuanLySoThuModel.Store.DONGVAT" Multiplicity="1" />
+          <End Role="KHAUPHANAN" Type="QuanLySoThuModel.Store.KHAUPHANAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DONGVAT">
+              <PropertyRef Name="MaDongVat" />
+            </Principal>
+            <Dependent Role="KHAUPHANAN">
+              <PropertyRef Name="MaDongVat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KHAUPHANAN_THUCAN">
+          <End Role="THUCAN" Type="QuanLySoThuModel.Store.THUCAN" Multiplicity="1" />
+          <End Role="KHAUPHANAN" Type="QuanLySoThuModel.Store.KHAUPHANAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="THUCAN">
+              <PropertyRef Name="MaThucAn" />
+            </Principal>
+            <Dependent Role="KHAUPHANAN">
+              <PropertyRef Name="MaThucAn" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QuanLySoThuModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="QuanLySoThuDbEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="ACCOUNTs" EntityType="QuanLySoThuModel.ACCOUNT" />
+          <EntitySet Name="BANGDIEUTRIs" EntityType="QuanLySoThuModel.BANGDIEUTRI" />
+          <EntitySet Name="BANGPHANCONGVESINHs" EntityType="QuanLySoThuModel.BANGPHANCONGVESINH" />
+          <EntitySet Name="BANGTHUCDONs" EntityType="QuanLySoThuModel.BANGTHUCDON" />
+          <EntitySet Name="BENHs" EntityType="QuanLySoThuModel.BENH" />
+          <EntitySet Name="CHUONGs" EntityType="QuanLySoThuModel.CHUONG" />
+          <EntitySet Name="DONGVATs" EntityType="QuanLySoThuModel.DONGVAT" />
+          <EntitySet Name="KHAUPHANANs" EntityType="QuanLySoThuModel.KHAUPHANAN" />
+          <EntitySet Name="NHANVIENs" EntityType="QuanLySoThuModel.NHANVIEN" />
+          <EntitySet Name="sysdiagrams" EntityType="QuanLySoThuModel.sysdiagram" />
+          <EntitySet Name="THUCANs" EntityType="QuanLySoThuModel.THUCAN" />
+          <EntitySet Name="THUOCDIEUTRIs" EntityType="QuanLySoThuModel.THUOCDIEUTRI" />
+          <AssociationSet Name="FK_BANGDIEUTRI_BENH1" Association="QuanLySoThuModel.FK_BANGDIEUTRI_BENH1">
+            <End Role="BENH" EntitySet="BENHs" />
+            <End Role="BANGDIEUTRI" EntitySet="BANGDIEUTRIs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BANGDIEUTRI_DONGVAT" Association="QuanLySoThuModel.FK_BANGDIEUTRI_DONGVAT">
+            <End Role="DONGVAT" EntitySet="DONGVATs" />
+            <End Role="BANGDIEUTRI" EntitySet="BANGDIEUTRIs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BANGDIEUTRI_NHANVIEN" Association="QuanLySoThuModel.FK_BANGDIEUTRI_NHANVIEN">
+            <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+            <End Role="BANGDIEUTRI" EntitySet="BANGDIEUTRIs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BANGPHANCONGVESINH_CHUONG" Association="QuanLySoThuModel.FK_BANGPHANCONGVESINH_CHUONG">
+            <End Role="CHUONG" EntitySet="CHUONGs" />
+            <End Role="BANGPHANCONGVESINH" EntitySet="BANGPHANCONGVESINHs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BANGPHANCONGVESINH_NHANVIEN" Association="QuanLySoThuModel.FK_BANGPHANCONGVESINH_NHANVIEN">
+            <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+            <End Role="BANGPHANCONGVESINH" EntitySet="BANGPHANCONGVESINHs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BANGTHUCDON_KHAUPHANAN" Association="QuanLySoThuModel.FK_BANGTHUCDON_KHAUPHANAN">
+            <End Role="KHAUPHANAN" EntitySet="KHAUPHANANs" />
+            <End Role="BANGTHUCDON" EntitySet="BANGTHUCDONs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BANGTHUCDON_NHANVIEN" Association="QuanLySoThuModel.FK_BANGTHUCDON_NHANVIEN">
+            <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+            <End Role="BANGTHUCDON" EntitySet="BANGTHUCDONs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BENH_THUOCDIEUTRI1" Association="QuanLySoThuModel.FK_BENH_THUOCDIEUTRI1">
+            <End Role="THUOCDIEUTRI" EntitySet="THUOCDIEUTRIs" />
+            <End Role="BENH" EntitySet="BENHs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CHUONG_DONGVAT" Association="QuanLySoThuModel.FK_CHUONG_DONGVAT">
+            <End Role="DONGVAT" EntitySet="DONGVATs" />
+            <End Role="CHUONG" EntitySet="CHUONGs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KHAUPHANAN_DONGVAT1" Association="QuanLySoThuModel.FK_KHAUPHANAN_DONGVAT1">
+            <End Role="DONGVAT" EntitySet="DONGVATs" />
+            <End Role="KHAUPHANAN" EntitySet="KHAUPHANANs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KHAUPHANAN_THUCAN" Association="QuanLySoThuModel.FK_KHAUPHANAN_THUCAN">
+            <End Role="THUCAN" EntitySet="THUCANs" />
+            <End Role="KHAUPHANAN" EntitySet="KHAUPHANANs" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ACCOUNT">
+          <Key>
+            <PropertyRef Name="TaiKhoan" />
+          </Key>
+          <Property Name="TaiKhoan" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="MatKhau" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Loai" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="BANGDIEUTRI">
+          <Key>
+            <PropertyRef Name="MaDieuTri" />
+          </Key>
+          <Property Name="MaDieuTri" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="MaBenh" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="MaNhanVien" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="MaDongVat" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="NgayDieuTri" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="BENH" Relationship="QuanLySoThuModel.FK_BANGDIEUTRI_BENH1" FromRole="BANGDIEUTRI" ToRole="BENH" />
+          <NavigationProperty Name="DONGVAT" Relationship="QuanLySoThuModel.FK_BANGDIEUTRI_DONGVAT" FromRole="BANGDIEUTRI" ToRole="DONGVAT" />
+          <NavigationProperty Name="NHANVIEN" Relationship="QuanLySoThuModel.FK_BANGDIEUTRI_NHANVIEN" FromRole="BANGDIEUTRI" ToRole="NHANVIEN" />
+        </EntityType>
+        <EntityType Name="BANGPHANCONGVESINH">
+          <Key>
+            <PropertyRef Name="MaVeSinh" />
+          </Key>
+          <Property Name="MaVeSinh" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="MaNhanVien" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="MaChuong" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="TenVeSinh" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="NgayLam" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="CHUONG" Relationship="QuanLySoThuModel.FK_BANGPHANCONGVESINH_CHUONG" FromRole="BANGPHANCONGVESINH" ToRole="CHUONG" />
+          <NavigationProperty Name="NHANVIEN" Relationship="QuanLySoThuModel.FK_BANGPHANCONGVESINH_NHANVIEN" FromRole="BANGPHANCONGVESINH" ToRole="NHANVIEN" />
+        </EntityType>
+        <EntityType Name="BANGTHUCDON">
+          <Key>
+            <PropertyRef Name="MaThucDon" />
+          </Key>
+          <Property Name="MaThucDon" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="MaNhanVien" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="MaKhauPhanAn" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="NgayLap" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="KHAUPHANAN" Relationship="QuanLySoThuModel.FK_BANGTHUCDON_KHAUPHANAN" FromRole="BANGTHUCDON" ToRole="KHAUPHANAN" />
+          <NavigationProperty Name="NHANVIEN" Relationship="QuanLySoThuModel.FK_BANGTHUCDON_NHANVIEN" FromRole="BANGTHUCDON" ToRole="NHANVIEN" />
+        </EntityType>
+        <EntityType Name="BENH">
+          <Key>
+            <PropertyRef Name="MaBenh" />
+          </Key>
+          <Property Name="MaBenh" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="MaThuocDieuTri" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="TenBenh" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="ThoiGianBenh" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TrieuChung" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TinhTrang" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="BANGDIEUTRIs" Relationship="QuanLySoThuModel.FK_BANGDIEUTRI_BENH1" FromRole="BENH" ToRole="BANGDIEUTRI" />
+          <NavigationProperty Name="THUOCDIEUTRI" Relationship="QuanLySoThuModel.FK_BENH_THUOCDIEUTRI1" FromRole="BENH" ToRole="THUOCDIEUTRI" />
+        </EntityType>
+        <EntityType Name="CHUONG">
+          <Key>
+            <PropertyRef Name="MaChuong" />
+          </Key>
+          <Property Name="MaChuong" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="LoaiChuong" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="MaDongVat" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="TenChuong" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="SoLuongLuuTru" Type="Int32" />
+          <Property Name="TinhTrang" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="BANGPHANCONGVESINHs" Relationship="QuanLySoThuModel.FK_BANGPHANCONGVESINH_CHUONG" FromRole="CHUONG" ToRole="BANGPHANCONGVESINH" />
+          <NavigationProperty Name="DONGVAT" Relationship="QuanLySoThuModel.FK_CHUONG_DONGVAT" FromRole="CHUONG" ToRole="DONGVAT" />
+        </EntityType>
+        <EntityType Name="DONGVAT">
+          <Key>
+            <PropertyRef Name="MaDongVat" />
+          </Key>
+          <Property Name="MaDongVat" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="TenDongVat" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="TenKhoaHoc" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="GioiTinh" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Mau" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="CanNang" Type="Int32" />
+          <Property Name="ChieuCao" Type="Int32" />
+          <Property Name="ChieuDai" Type="Int32" />
+          <Property Name="NgaySinh" Type="DateTime" Precision="3" />
+          <Property Name="NgayNhapVe" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Loai" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Chi" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Ho" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Bo" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Nganh" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="SucKhoe" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="HinhThucGiamSat" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="SoLuong" Type="Int32" />
+          <Property Name="NoiXuatXu" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="NoiCuTru" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="TuoiTho" Type="Int32" />
+          <NavigationProperty Name="BANGDIEUTRIs" Relationship="QuanLySoThuModel.FK_BANGDIEUTRI_DONGVAT" FromRole="DONGVAT" ToRole="BANGDIEUTRI" />
+          <NavigationProperty Name="CHUONGs" Relationship="QuanLySoThuModel.FK_CHUONG_DONGVAT" FromRole="DONGVAT" ToRole="CHUONG" />
+          <NavigationProperty Name="KHAUPHANANs" Relationship="QuanLySoThuModel.FK_KHAUPHANAN_DONGVAT1" FromRole="DONGVAT" ToRole="KHAUPHANAN" />
+        </EntityType>
+        <EntityType Name="KHAUPHANAN">
+          <Key>
+            <PropertyRef Name="MaKhauPhanAn" />
+          </Key>
+          <Property Name="MaKhauPhanAn" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="MaDongVat" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="MaThucAn" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="KhoiLuongKhauPhan" Type="Int32" Nullable="false" />
+          <Property Name="ThoiGianAn" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="BANGTHUCDONs" Relationship="QuanLySoThuModel.FK_BANGTHUCDON_KHAUPHANAN" FromRole="KHAUPHANAN" ToRole="BANGTHUCDON" />
+          <NavigationProperty Name="DONGVAT" Relationship="QuanLySoThuModel.FK_KHAUPHANAN_DONGVAT1" FromRole="KHAUPHANAN" ToRole="DONGVAT" />
+          <NavigationProperty Name="THUCAN" Relationship="QuanLySoThuModel.FK_KHAUPHANAN_THUCAN" FromRole="KHAUPHANAN" ToRole="THUCAN" />
+        </EntityType>
+        <EntityType Name="NHANVIEN">
+          <Key>
+            <PropertyRef Name="MaNhanVien" />
+          </Key>
+          <Property Name="MaNhanVien" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="LoaiNhanVien" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="TenNhanVien" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="PhongBan" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="GioiTinh" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="NgaySinh" Type="DateTime" Precision="3" />
+          <Property Name="DiaChi" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CMND" Type="Int32" Nullable="false" />
+          <Property Name="SoDienThoai" Type="Int32" />
+          <Property Name="NgayVaoLam" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TinhTrang" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="BANGDIEUTRIs" Relationship="QuanLySoThuModel.FK_BANGDIEUTRI_NHANVIEN" FromRole="NHANVIEN" ToRole="BANGDIEUTRI" />
+          <NavigationProperty Name="BANGPHANCONGVESINHs" Relationship="QuanLySoThuModel.FK_BANGPHANCONGVESINH_NHANVIEN" FromRole="NHANVIEN" ToRole="BANGPHANCONGVESINH" />
+          <NavigationProperty Name="BANGTHUCDONs" Relationship="QuanLySoThuModel.FK_BANGTHUCDON_NHANVIEN" FromRole="NHANVIEN" ToRole="BANGTHUCDON" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="THUCAN">
+          <Key>
+            <PropertyRef Name="MaThucAn" />
+          </Key>
+          <Property Name="MaThucAn" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="LoaiThucAn" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="DonViTinh" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="TenThucAn" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="SoLuong" Type="Int32" Nullable="false" />
+          <Property Name="NgayNhap" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="HamLuongDinhDuong" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="GiaThanh" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="ChiPhiVanChuyen" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="PhatSinh" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="KHAUPHANANs" Relationship="QuanLySoThuModel.FK_KHAUPHANAN_THUCAN" FromRole="THUCAN" ToRole="KHAUPHANAN" />
+        </EntityType>
+        <EntityType Name="THUOCDIEUTRI">
+          <Key>
+            <PropertyRef Name="MaThuocDieuTri" />
+          </Key>
+          <Property Name="MaThuocDieuTri" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="TenThuoc" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="SoLo" Type="Int32" Nullable="false" />
+          <Property Name="NgaySanXuat" Type="DateTime" Precision="3" />
+          <Property Name="NgayHetHan" Type="DateTime" Precision="3" />
+          <Property Name="SoLuong" Type="Int32" Nullable="false" />
+          <Property Name="DonViTinh" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="DonGia" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <NavigationProperty Name="BENHs" Relationship="QuanLySoThuModel.FK_BENH_THUOCDIEUTRI1" FromRole="THUOCDIEUTRI" ToRole="BENH" />
+        </EntityType>
+        <Association Name="FK_BANGDIEUTRI_BENH1">
+          <End Role="BENH" Type="QuanLySoThuModel.BENH" Multiplicity="1" />
+          <End Role="BANGDIEUTRI" Type="QuanLySoThuModel.BANGDIEUTRI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BENH">
+              <PropertyRef Name="MaBenh" />
+            </Principal>
+            <Dependent Role="BANGDIEUTRI">
+              <PropertyRef Name="MaBenh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BANGDIEUTRI_DONGVAT">
+          <End Role="DONGVAT" Type="QuanLySoThuModel.DONGVAT" Multiplicity="1" />
+          <End Role="BANGDIEUTRI" Type="QuanLySoThuModel.BANGDIEUTRI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DONGVAT">
+              <PropertyRef Name="MaDongVat" />
+            </Principal>
+            <Dependent Role="BANGDIEUTRI">
+              <PropertyRef Name="MaDongVat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BANGDIEUTRI_NHANVIEN">
+          <End Role="NHANVIEN" Type="QuanLySoThuModel.NHANVIEN" Multiplicity="1" />
+          <End Role="BANGDIEUTRI" Type="QuanLySoThuModel.BANGDIEUTRI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHANVIEN">
+              <PropertyRef Name="MaNhanVien" />
+            </Principal>
+            <Dependent Role="BANGDIEUTRI">
+              <PropertyRef Name="MaNhanVien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BANGPHANCONGVESINH_CHUONG">
+          <End Role="CHUONG" Type="QuanLySoThuModel.CHUONG" Multiplicity="1" />
+          <End Role="BANGPHANCONGVESINH" Type="QuanLySoThuModel.BANGPHANCONGVESINH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHUONG">
+              <PropertyRef Name="MaChuong" />
+            </Principal>
+            <Dependent Role="BANGPHANCONGVESINH">
+              <PropertyRef Name="MaChuong" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BANGPHANCONGVESINH_NHANVIEN">
+          <End Role="NHANVIEN" Type="QuanLySoThuModel.NHANVIEN" Multiplicity="1" />
+          <End Role="BANGPHANCONGVESINH" Type="QuanLySoThuModel.BANGPHANCONGVESINH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHANVIEN">
+              <PropertyRef Name="MaNhanVien" />
+            </Principal>
+            <Dependent Role="BANGPHANCONGVESINH">
+              <PropertyRef Name="MaNhanVien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BANGTHUCDON_KHAUPHANAN">
+          <End Role="KHAUPHANAN" Type="QuanLySoThuModel.KHAUPHANAN" Multiplicity="1" />
+          <End Role="BANGTHUCDON" Type="QuanLySoThuModel.BANGTHUCDON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHAUPHANAN">
+              <PropertyRef Name="MaKhauPhanAn" />
+            </Principal>
+            <Dependent Role="BANGTHUCDON">
+              <PropertyRef Name="MaNhanVien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BANGTHUCDON_NHANVIEN">
+          <End Role="NHANVIEN" Type="QuanLySoThuModel.NHANVIEN" Multiplicity="1" />
+          <End Role="BANGTHUCDON" Type="QuanLySoThuModel.BANGTHUCDON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHANVIEN">
+              <PropertyRef Name="MaNhanVien" />
+            </Principal>
+            <Dependent Role="BANGTHUCDON">
+              <PropertyRef Name="MaNhanVien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BENH_THUOCDIEUTRI1">
+          <End Role="THUOCDIEUTRI" Type="QuanLySoThuModel.THUOCDIEUTRI" Multiplicity="1" />
+          <End Role="BENH" Type="QuanLySoThuModel.BENH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="THUOCDIEUTRI">
+              <PropertyRef Name="MaThuocDieuTri" />
+            </Principal>
+            <Dependent Role="BENH">
+              <PropertyRef Name="MaThuocDieuTri" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CHUONG_DONGVAT">
+          <End Role="DONGVAT" Type="QuanLySoThuModel.DONGVAT" Multiplicity="1" />
+          <End Role="CHUONG" Type="QuanLySoThuModel.CHUONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DONGVAT">
+              <PropertyRef Name="MaDongVat" />
+            </Principal>
+            <Dependent Role="CHUONG">
+              <PropertyRef Name="MaDongVat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KHAUPHANAN_DONGVAT1">
+          <End Role="DONGVAT" Type="QuanLySoThuModel.DONGVAT" Multiplicity="1" />
+          <End Role="KHAUPHANAN" Type="QuanLySoThuModel.KHAUPHANAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DONGVAT">
+              <PropertyRef Name="MaDongVat" />
+            </Principal>
+            <Dependent Role="KHAUPHANAN">
+              <PropertyRef Name="MaDongVat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KHAUPHANAN_THUCAN">
+          <End Role="THUCAN" Type="QuanLySoThuModel.THUCAN" Multiplicity="1" />
+          <End Role="KHAUPHANAN" Type="QuanLySoThuModel.KHAUPHANAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="THUCAN">
+              <PropertyRef Name="MaThucAn" />
+            </Principal>
+            <Dependent Role="KHAUPHANAN">
+              <PropertyRef Name="MaThucAn" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QuanLySoThuModelStoreContainer" CdmEntityContainer="QuanLySoThuDbEntities">
+          <EntitySetMapping Name="ACCOUNTs">
+            <EntityTypeMapping TypeName="QuanLySoThuModel.ACCOUNT">
+              <MappingFragment StoreEntitySet="ACCOUNT">
+                <ScalarProperty Name="TaiKhoan" ColumnName="TaiKhoan" />
+                <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+                <ScalarProperty Name="Loai" ColumnName="Loai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BANGDIEUTRIs">
+            <EntityTypeMapping TypeName="QuanLySoThuModel.BANGDIEUTRI">
+              <MappingFragment StoreEntitySet="BANGDIEUTRI">
+                <ScalarProperty Name="MaDieuTri" ColumnName="MaDieuTri" />
+                <ScalarProperty Name="MaBenh" ColumnName="MaBenh" />
+                <ScalarProperty Name="MaNhanVien" ColumnName="MaNhanVien" />
+                <ScalarProperty Name="MaDongVat" ColumnName="MaDongVat" />
+                <ScalarProperty Name="NgayDieuTri" ColumnName="NgayDieuTri" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BANGPHANCONGVESINHs">
+            <EntityTypeMapping TypeName="QuanLySoThuModel.BANGPHANCONGVESINH">
+              <MappingFragment StoreEntitySet="BANGPHANCONGVESINH">
+                <ScalarProperty Name="MaVeSinh" ColumnName="MaVeSinh" />
+                <ScalarProperty Name="MaNhanVien" ColumnName="MaNhanVien" />
+                <ScalarProperty Name="MaChuong" ColumnName="MaChuong" />
+                <ScalarProperty Name="TenVeSinh" ColumnName="TenVeSinh" />
+                <ScalarProperty Name="NgayLam" ColumnName="NgayLam" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BANGTHUCDONs">
+            <EntityTypeMapping TypeName="QuanLySoThuModel.BANGTHUCDON">
+              <MappingFragment StoreEntitySet="BANGTHUCDON">
+                <ScalarProperty Name="MaThucDon" ColumnName="MaThucDon" />
+                <ScalarProperty Name="MaNhanVien" ColumnName="MaNhanVien" />
+                <ScalarProperty Name="MaKhauPhanAn" ColumnName="MaKhauPhanAn" />
+                <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BENHs">
+            <EntityTypeMapping TypeName="QuanLySoThuModel.BENH">
+              <MappingFragment StoreEntitySet="BENH">
+                <ScalarProperty Name="MaBenh" ColumnName="MaBenh" />
+                <ScalarProperty Name="MaThuocDieuTri" ColumnName="MaThuocDieuTri" />
+                <ScalarProperty Name="TenBenh" ColumnName="TenBenh" />
+                <ScalarProperty Name="ThoiGianBenh" ColumnName="ThoiGianBenh" />
+                <ScalarProperty Name="TrieuChung" ColumnName="TrieuChung" />
+                <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CHUONGs">
+            <EntityTypeMapping TypeName="QuanLySoThuModel.CHUONG">
+              <MappingFragment StoreEntitySet="CHUONG">
+                <ScalarProperty Name="MaChuong" ColumnName="MaChuong" />
+                <ScalarProperty Name="LoaiChuong" ColumnName="LoaiChuong" />
+                <ScalarProperty Name="MaDongVat" ColumnName="MaDongVat" />
+                <ScalarProperty Name="TenChuong" ColumnName="TenChuong" />
+                <ScalarProperty Name="SoLuongLuuTru" ColumnName="SoLuongLuuTru" />
+                <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DONGVATs">
+            <EntityTypeMapping TypeName="QuanLySoThuModel.DONGVAT">
+              <MappingFragment StoreEntitySet="DONGVAT">
+                <ScalarProperty Name="MaDongVat" ColumnName="MaDongVat" />
+                <ScalarProperty Name="TenDongVat" ColumnName="TenDongVat" />
+                <ScalarProperty Name="TenKhoaHoc" ColumnName="TenKhoaHoc" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="Mau" ColumnName="Mau" />
+                <ScalarProperty Name="CanNang" ColumnName="CanNang" />
+                <ScalarProperty Name="ChieuCao" ColumnName="ChieuCao" />
+                <ScalarProperty Name="ChieuDai" ColumnName="ChieuDai" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="NgayNhapVe" ColumnName="NgayNhapVe" />
+                <ScalarProperty Name="Loai" ColumnName="Loai" />
+                <ScalarProperty Name="Chi" ColumnName="Chi" />
+                <ScalarProperty Name="Ho" ColumnName="Ho" />
+                <ScalarProperty Name="Bo" ColumnName="Bo" />
+                <ScalarProperty Name="Nganh" ColumnName="Nganh" />
+                <ScalarProperty Name="SucKhoe" ColumnName="SucKhoe" />
+                <ScalarProperty Name="HinhThucGiamSat" ColumnName="HinhThucGiamSat" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="NoiXuatXu" ColumnName="NoiXuatXu" />
+                <ScalarProperty Name="NoiCuTru" ColumnName="NoiCuTru" />
+                <ScalarProperty Name="TuoiTho" ColumnName="TuoiTho" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KHAUPHANANs">
+            <EntityTypeMapping TypeName="QuanLySoThuModel.KHAUPHANAN">
+              <MappingFragment StoreEntitySet="KHAUPHANAN">
+                <ScalarProperty Name="MaKhauPhanAn" ColumnName="MaKhauPhanAn" />
+                <ScalarProperty Name="MaDongVat" ColumnName="MaDongVat" />
+                <ScalarProperty Name="MaThucAn" ColumnName="MaThucAn" />
+                <ScalarProperty Name="KhoiLuongKhauPhan" ColumnName="KhoiLuongKhauPhan" />
+                <ScalarProperty Name="ThoiGianAn" ColumnName="ThoiGianAn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NHANVIENs">
+            <EntityTypeMapping TypeName="QuanLySoThuModel.NHANVIEN">
+              <MappingFragment StoreEntitySet="NHANVIEN">
+                <ScalarProperty Name="MaNhanVien" ColumnName="MaNhanVien" />
+                <ScalarProperty Name="LoaiNhanVien" ColumnName="LoaiNhanVien" />
+                <ScalarProperty Name="TenNhanVien" ColumnName="TenNhanVien" />
+                <ScalarProperty Name="PhongBan" ColumnName="PhongBan" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="CMND" ColumnName="CMND" />
+                <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+                <ScalarProperty Name="NgayVaoLam" ColumnName="NgayVaoLam" />
+                <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="QuanLySoThuModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="THUCANs">
+            <EntityTypeMapping TypeName="QuanLySoThuModel.THUCAN">
+              <MappingFragment StoreEntitySet="THUCAN">
+                <ScalarProperty Name="MaThucAn" ColumnName="MaThucAn" />
+                <ScalarProperty Name="LoaiThucAn" ColumnName="LoaiThucAn" />
+                <ScalarProperty Name="DonViTinh" ColumnName="DonViTinh" />
+                <ScalarProperty Name="TenThucAn" ColumnName="TenThucAn" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="NgayNhap" ColumnName="NgayNhap" />
+                <ScalarProperty Name="HamLuongDinhDuong" ColumnName="HamLuongDinhDuong" />
+                <ScalarProperty Name="GiaThanh" ColumnName="GiaThanh" />
+                <ScalarProperty Name="ChiPhiVanChuyen" ColumnName="ChiPhiVanChuyen" />
+                <ScalarProperty Name="PhatSinh" ColumnName="PhatSinh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="THUOCDIEUTRIs">
+            <EntityTypeMapping TypeName="QuanLySoThuModel.THUOCDIEUTRI">
+              <MappingFragment StoreEntitySet="THUOCDIEUTRI">
+                <ScalarProperty Name="MaThuocDieuTri" ColumnName="MaThuocDieuTri" />
+                <ScalarProperty Name="TenThuoc" ColumnName="TenThuoc" />
+                <ScalarProperty Name="SoLo" ColumnName="SoLo" />
+                <ScalarProperty Name="NgaySanXuat" ColumnName="NgaySanXuat" />
+                <ScalarProperty Name="NgayHetHan" ColumnName="NgayHetHan" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="DonViTinh" ColumnName="DonViTinh" />
+                <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
